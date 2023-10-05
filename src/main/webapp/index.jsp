@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World from Mamatha and Venkat Test2!</h2>
+<h2>Code deployed with Jenkins and AWS Code Deploy Integration.</h2>
 <p>You have successfully deployed the example-tomcat-war repository. Good Job!</p>
 </body>
 </html>

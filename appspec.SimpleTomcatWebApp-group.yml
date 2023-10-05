@@ -3,3 +3,4 @@ os: linux
 files:
   - source: /target/SimpleTomcatWebApp.war
     destination: /var/lib/tomcat9/webapps
+file_exists_behavior: OVERWRITE

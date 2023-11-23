@@ -2,4 +2,4 @@ version: 0.0
 os: linux
 files:
   - source: ./SimpleTomcatWebApp.war
-    destination: /var/lib/tmocat9/webapps
+    destination: /var/lib/tomcat9/webapps

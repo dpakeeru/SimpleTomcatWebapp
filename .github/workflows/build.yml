@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Generate build number
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{secrets.github_token}} 
+        
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -30,8 +36,8 @@ jobs:
       
       - name: Build and Push Image
         run: |
-            docker build -t mamathasama/javagithub:latest .
-            docker push mamathasama/javagithub:latest
+            docker build -t mamathasama/javagithub:$BUILD_NUMBER .
+            docker push mamathasama/javagithub:$BUILD_NUMBER
       
 
       

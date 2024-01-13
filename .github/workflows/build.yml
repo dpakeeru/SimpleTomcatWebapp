@@ -38,7 +38,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: mpakeeru/argo-cd
-          ref: main  # Specify the branch or commit you want to checkout
+          ref: master  # Specify the branch or commit you want to checkout
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Edit file and commit changes

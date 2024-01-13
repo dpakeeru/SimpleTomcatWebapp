@@ -22,7 +22,4 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
      
-      - name: SonarQube Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_SECRET }}
-        run: mvn sonar:sonar -Dsonar.host.url=http://192.168.86.36:9000 -Dsonar.projectKey=github_actions
+      

@@ -44,7 +44,7 @@ jobs:
       - name: Edit file and commit changes
         run: |
           # Update the file content
-          sed -i 's|\(image:\) .*|\1 mamathasama/javagithub:build-${{ github.run_number }}/' tomcatwebapp-deployment.yml
+          sed -i 's|\(image:\) .*|\1 mamathasama/javagithub:build-${{ github.run_number }}|' tomcatwebapp-deployment.yml
 
           # Configure Git
           git config user.email "mamathasama@hotmail.com"

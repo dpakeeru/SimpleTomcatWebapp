@@ -34,6 +34,9 @@ jobs:
         run: |
             docker build -t mamathasama/javagithub:build-${{ github.run_number }} .
             docker push mamathasama/javagithub:build-${{ github.run_number }}
+  change:  
+    runs-on: ubuntu-latest
+    steps:
       
       - name: Checkout k8 manifests repo
         uses: actions/checkout@v2
@@ -54,10 +57,11 @@ jobs:
           # Add and commit changes
           git add tomcatwebapp-deployment.yml
           git commit -m "Update image version wit ${{ github.run_number }} "
-          git remote set-url origin "https://${{ github.actor }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/mpakeeru/argo-cd.git"
-          git push https://mpakeeru:${MY_GITHUB_TOKEN}@github.com/mpakeeru/argo-cd.git HEAD:master
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  
+          git push
+          #git remote set-url origin "https://${{ github.actor }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/mpakeeru/argo-cd.git"
+          #git push https://mpakeeru:${MY_GITHUB_TOKEN}@github.com/mpakeeru/argo-cd.git HEAD:master
+        #env:
+        #  MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  
 
 
 

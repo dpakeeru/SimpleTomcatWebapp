@@ -40,7 +40,7 @@ jobs:
         with:
           repository: mpakeeru/argo-cd
           ref: master  # Specify the branch or commit you want to checkout
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Edit file and commit changes
         run: |

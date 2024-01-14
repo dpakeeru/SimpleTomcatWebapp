@@ -48,8 +48,8 @@ jobs:
           sed -i 's|\(image:\) .*|\1 mamathasama/javagithub:build-${{ github.run_number }}|' tomcatwebapp-deployment.yml
 
           # Configure Git
-          git config user.email "mamathasama@hotmail.com"
-          git config user.name "mpakeeru"
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
 
           # Add and commit changes
           git add tomcatwebapp-deployment.yml

@@ -54,7 +54,7 @@ jobs:
           # Add and commit changes
           git add tomcatwebapp-deployment.yml
           git commit -m "Update image version wit ${{ github.run_number }} "
-          git push https://${MY_GITHUB_TOKEN}@github.com/mpakeeru/argo-cd HEAD:main
+          git push https://${MY_GITHUB_TOKEN}@github.com/mpakeeru/argo-cd.git HEAD:main
         env:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  
 

@@ -42,7 +42,7 @@ jobs:
           ref: master  # Specify the branch or commit you want to checkout
           token: ${{ secrets.MY_GITHUB_TOKEN }}
 
-      - name: Edit file and commit changes
+      - name: Edit deployment file and commit changes
         run: |
           # Update the file content
           sed -i 's|\(image:\) .*|\1 mamathasama/javagithub:build-${{ github.run_number }}|' tomcatwebapp-deployment.yml
@@ -55,10 +55,7 @@ jobs:
           git add tomcatwebapp-deployment.yml
           git commit -m "Update image version wit ${{ github.run_number }} "
           git push
-          # git remote set-url origin "https://${{ github.actor }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/mpakeeru/argo-cd.git"
-          # git push https://mpakeeru:${MY_GITHUB_TOKEN}@github.com/mpakeeru/argo-cd.git HEAD:master
-        # env:
-        #  MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  
+
 
 
 

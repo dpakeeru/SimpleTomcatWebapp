@@ -54,12 +54,8 @@ jobs:
           # Add and commit changes
           git add tomcatwebapp-deployment.yml
           git commit -m "Update image version wit ${{ github.run_number }} "
+          git push
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          repository: mpakeeru/argo-cd
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          branch: master
+
 
          

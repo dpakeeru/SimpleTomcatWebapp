@@ -23,6 +23,25 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
+- stage: Build WAR
+  displayName: Build WAR File 
+  jobs:
+  - job: Build WAR
+    displayName: Build WAR
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'clean package install'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
 - stage: Build
   displayName: Build image
   jobs:

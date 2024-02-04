@@ -9,7 +9,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
-- stage: Build_WAR
+- stage: BuildWAR
   displayName: Build WAR File 
   jobs:
   - job: BuildWAR

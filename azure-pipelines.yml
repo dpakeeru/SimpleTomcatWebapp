@@ -13,7 +13,7 @@ stages:
   displayName: Build WAR File 
   jobs:
   - job: Build WAR
-    displayName: Build WAR
+    displayName: BuildWAR
     pool:
       vmImage: ubuntu-latest
     steps:

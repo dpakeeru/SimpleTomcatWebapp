@@ -12,7 +12,7 @@ stages:
 - stage: Build_WAR
   displayName: Build WAR File 
   jobs:
-  - job: Build WAR
+  - job: BuildWAR
     displayName: BuildWAR
     pool:
       vmImage: ubuntu-latest

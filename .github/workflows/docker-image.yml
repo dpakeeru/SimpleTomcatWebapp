@@ -15,6 +15,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: DOCKERHUB_CREDENTIALS
 
     steps:
       - name: Checkout Source Code
